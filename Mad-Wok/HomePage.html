@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAD WOK | Authentic Chinese Cuisine</title>
+    <link rel="icon" type="image/png" href="images/madwok-title.png">
+    <link rel="stylesheet" href="Homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-compat.js"></script>
+
+</head>
+
+
+<body>
+
+    <!-- Chevron icon -->
+    <!-- <div class="chevron" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'});"></div> -->
+    <div class="sticker-btn" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'});">
+        <img src="https://firebasestorage.googleapis.com/v0/b/madwokmenu.firebasestorage.app/o/menu-man.png?alt=media&token=2290c16a-a398-4e04-b2f3-92e83b3e7e57" alt="Menu Sticker">
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home"><img src="images/madwok-title.png" alt="MAD WOK Logo" style="height: 50px;"> </a>
+                <h1>MAD WOK</h1>
+            </div>
+            <button class="mobile-nav-toggle">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact-span">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2 class="fade-in">MAD WOK</h2>
+            <h3 class="chinese-title chinese-font fade-in">美食家</h3>
+            <p class="fade-in">Experience the bold, authentic flavors of Chinese cuisine in a modern setting. Our chefs bring traditional recipes with a contemporary twist.</p>
+            <a href="#menu" class="cta-button fade-in">Explore Menu</a>
+        </div>
+    </section>
+
+
+
+
+    <!-- About Section -->
+    <section class="about" id="about" style="
+    background: url('images/storybackground.png') no-repeat center center/cover;
+    padding: 60px 0;
+    color: #111;">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="images/ourstory.gif" alt="Mad Wok Restaurant Interior">
+            </div>
+            <div class="about-content">
+                <h2 class="section-title">Our Story <span class="chinese-subtitle chinese-font">我们的故事</span></h2>
+                <p font-family: style="font-family: cursive; color: #d32f2f;"><strong style="color:black">Madwok:</strong> <strong> Where authentic Chinese flavors 🥢 meet warm hospitality 🤗, making every meal 🍜 a celebration 🎉. </strong>
+                </p>
+                <br>
+                <!-- <p>Madwok is a vibrant Chinese restaurant where fresh ingredients, authentic flavors, and friendly service come together. From classic favorites like noodles and fried rice to sizzling stir-fries and signature specials, Madwok offers a warm,
+                    welcoming space where you can relax and enjoy great food with family and friends.</p>
+                <p>From steaming hot dumplings to stir-fried delights, Madwok serves up authentic Chinese comfort food you’ll crave again and again.</p> -->
+                <p><strong>
+                    Madwok is a vibrant Chinese restaurant where fresh ingredients 🥬, authentic flavors 🌶️, and friendly service 🤝 come together. From classic favorites like noodles 🍜 and fried rice 🍚 to sizzling stir-fries 🍲 and signature specials, Madwok offers a
+                    warm, welcoming space where you can relax and enjoy great food with family 👨‍👩‍👧‍👦 and friends 🧑‍🤝‍🧑.
+                    <!-- </p>
+                <p> -->
+                    From steaming hot dumplings 🥟 to stir-fried delights 🔥, Madwok serves up authentic Chinese comfort food you’ll crave again and again.
+                    </strong>
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="menu-header">
+                <h2 class="section-title"> Menu <span class="chinese-subtitle chinese-font">菜单</span></h2>
+            </div>
+
+            <div class="menu-filter">
+                <!-- <button class="filter-btn" data-category="all">All</button> -->
+
+                <button class="filter-btn active" data-category="momos">Momos ( Veg/Non-Veg 🥟🥬🍗)</button>
+                <button class="filter-btn" data-category="soups">Soups ( Veg/Non-Veg 🍲🥬🍗)</button>
+                <button class="filter-btn" data-category="houseSpecials">House Specials ( Veg/Non-Veg ⭐🥢)</button>
+                <button class="filter-btn" data-category="combos">Combos ( Veg/Non-Veg 🍚🥬🍗🦐🐟 )</button>
+                <button class="filter-btn" data-category="skewers">Skewers ( Veg/Non-Veg 🍢🥬🍗)</button>
+                <button class="filter-btn" data-category="sizzlers">Sizzlers ( Veg/Non-Veg 🍢🥬🍗)</button>
+                <button class="filter-btn" data-category="vegStarters">Starters ( Veg 🥬🍽️)</button>
+                <button class="filter-btn" data-category="eggStarters">EGG Starters ( Egg 🥚🍽️)</button>
+                <button class="filter-btn" data-category="nonVegStarters">Chicken Starters ( Non-Veg 🍗🍽️)</button>
+                <button class="filter-btn" data-category="seafoodStarters">Sea Food Starters ( Non-Veg 🦐🐟🍽️)</button>
+                <button class="filter-btn" data-category="riceVeg">Rice ( Veg 🍚🥬)</button>
+                <button class="filter-btn" data-category="riceNonVeg">Rice ( Non-Veg 🍚🍗)</button>
+                <button class="filter-btn" data-category="noodlesVeg">Noodles ( Veg 🍜🥬)</button>
+                <button class="filter-btn" data-category="noodlesNonVeg">Noodles ( Non-Veg 🍜🍗)</button>
+                <button class="filter-btn" data-category="desserts">Desserts 🍰 🍨</button>
+                <button class="filter-btn" data-category="beverages">Beverages 🥤💧</button>
+
+
+            </div>
+
+
+
+            <div id="menu-items" class="menu-items">
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact-span" style="
+    background: url('images/momobanner.png') no-repeat center center/cover;
+    padding: 60px 0;
+    color: #111;">
+        <div class="container">
+            <div class="menu-header">
+                <h2 class="section-title" style="color: white;">Contact Us <span class="chinese-subtitle chinese-font">联系我们</span></h2>
+            </div>
+
+            <div class="contact-container">
+
+                <div class="contact-info">
+                    <h3>Visit Us</h3>
+
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.9454323263517!2d78.36787977578099!3d17.510118099256665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93c8fe8a7f33%3A0x5b2f5f7e6fd5d76c!2sMadwok%20%E2%80%93%20Chinese%20Fast%20Food%20%26%20Momos%20Near%20Me%20%7C%20Miyapur%2C%20Hyd!5e0!3m2!1sen!2sin!4v1751280346284!5m2!1sen!2sin"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <br>
+                    <div class="contact-details">
+                        <p> <i class="fa-solid fa-location-dot"></i> Madwok – Chinese Fast Food & Momos | Miyapur, Hyderabad (Mayuri Nagar)</p>
+                        <p><i class="fa-sharp fa-solid fa-phone"></i> (+91) 81432 57725</p>
+                    </div>
+                    <br>
+                    <div class="opening-hours">
+                        <center>
+                            <!-- <h4><i class="fa-solid fa-business-time" style="color: #e60000"></i> Opening Hours</h4> -->
+                            <h4> Opening Hours</h4>
+                        </center>
+                        <ul class="hours-list">
+                            <li><span>Monday</span> <span>12:00 PM - 12:00 AM</span></li>
+                            <li><span>Tuesday</span> <span>12:00 PM - 12:00 AM</span></li>
+                            <li><span>Wednesday</span> <span>12:00 PM - 12:00 AM</span></li>
+                            <li><span>Thursday</span> <span>12:00 PM - 12:00 AM</span></li>
+                            <li><span>Friday</span> <span>12:00 PM - 12:00 AM</span></li>
+                            <li><span>Saturday</span> <span>12:00 PM - 12:00 AM</span></li>
+                            <li><span>Sunday</span> <span>12:00 PM - 12:00 AM</span></li>
+                        </ul>
+                        <br>
+                        <p style="margin-top: 10px; font-style: italic; color: #fff; background-color: #e01f26; padding: 8px; border-radius: 4px;">
+                            Operating hours may vary on <strong>'Festivals'</strong> and <strong>'Public Holidays'</strong>. We recommend contacting us in advance to confirm availability.
+
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="contact-info" style="background-color: #fa0505; color:#FFFFFF;">
+                    <h3 style="color:white">Follow Us</h3>
+                    <!-- Social Media Card Rows -->
+                    <!-- <div style="background-color: #fff; color: #000; padding: 10px; border-radius: 4px; margin-bottom: 20px;">
+                        <p style="margin: 8px 0;">
+                            <i class="fab fa-instagram" style="color: #E4405F; margin-right: 10px; font-size: 40px;"></i>
+                            <a href="https://www.instagram.com/madwok2025/reels/?__pwa=1" target="_blank" style="color: #000;">Instagram/madwok2025/</a>
+                        </p>
+                        <p style="margin: 8px 0;">
+                            <i class="fab fa-facebook" style="color: #3b5998; margin-right: 10px;font-size: 40px;"></i>
+                            <a href="https://www.facebook.com/people/Mad-Wok/61575536331033/" target="_blank" style="color: #000;">Facebook/Mad-Wok/</a>
+                        </p>
+                    </div> -->
+                    <div style="background-color: #fff; padding: 15px 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); max-width: 350px;">
+                        <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                            <i class="fab fa-instagram" style="color: #E4405F; font-size: 24px; margin-right: 10px;"></i>
+                            <a href="https://www.instagram.com/madwok2025/reels/?__pwa=1" class="social-media-links" target="_blank">
+                            Instagram/madwok2025
+                            </a>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                            <i class="fab fa-facebook" style="color: #3b5998; font-size: 24px; margin-right: 10px;"></i>
+                            <a href="https://www.facebook.com/people/Mad-Wok/61575536331033/" class="social-media-links" target="_blank">
+                            Facebook/Mad-Wok
+                            </a>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fa-brands fa-square-whatsapp" style="color: #3b9847; font-size: 24px; margin-right: 10px;"></i>
+                            <a href="https://wa.me/8143257725?text=Hi%20Mad%20Wok%21%20I%20just%20checked%20your%20menu%20on%20the%20website.%20I%27d%20like%20to%20place%20an%20order%20or%20ask%20a%20quick%20question." class="social-media-links" target="_blank">
+                                WhatsApp Us
+                                </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Google Review Button -->
+                    <!-- <a href="https://www.google.com/maps/place/Madwok+%E2%80%93+Chinese+Fast+Food+%26+Momos+Near+Me+%7C+Miyapur,+Hyd" target="_blank" style="display: inline-block; background-color: #fff; color: #e01f26; padding: 10px 15px; border-radius: 4px; font-weight: bold; text-decoration: none;">
+                      ★ Read Our Google Reviews
+                  </a> -->
+                    <br>
+                    <div class="elfsight-wrapper" style="background-color: white; border-radius: 1%;">
+                        <br>
+                        <div class="elfsight-app-553ae0e6-241c-49f2-a3e3-27cd291c5673" data-elfsight-app-lazy></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h4>MAD WOK</h4>
+                <p>Experience the bold, authentic flavors of Chinese cuisine in a modern setting. Our chefs bring traditional recipes with a contemporary twist.</p>
+                <!-- <div class="social-links">
+                    <a href="https://www.instagram.com/madwok2025?igsh=MW84NTF5Y214b21qZw== " target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/people/Mad-Wok/61575536331033/" target="_blank"><i class="fab fa-facebook"></i></a>
+
+                </div> -->
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#contact-span">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Order Online</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.swiggy.com/menu/1089636?source=sharing" target="_blank">Swiggy
+
+                        
+                    </a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Website Designed By</h4>
+                <ul class="footer-links">
+                    <li>
+                        <a href="https://www.swiggy.com/menu/1089636?source=sharing" target="_blank">
+                            Solve More Know More
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <img src="images/SK GIF.gif" alt="SK Logo" class="footer-logo" />
+            <p class="tagline">Solve More Know More</p>
+            <p class="copyright">
+                © 2025 SK | All Rights Reserved.<br> Designed & Maintained by Solve More Know More
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const toggleButton = document.querySelector('.mobile-nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        // Toggle menu open/close on button click
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu on nav item click
+        navItems.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+
+
+    <!-- 
+    <script type="module">
+        const firebaseConfig = { apiKey: "AIzaSyDSoh67dGT5Ym11GGlTDPKb4HEsG4XdyFk", authDomain: "madwokmenu.firebaseapp.com", projectId: "madwokmenu", storageBucket: "madwokmenu.appspot.com", messagingSenderId: "1003909873931", appId: "1:1003909873931:web:2fe83b24a7fc6cb270a20e",
+        measurementId: "G-3NJH84X4TJ" }; firebase.initializeApp(firebaseConfig); const db = firebase.firestore(); const menuContainer = document.querySelector(".menu-items"); db.collection("menuItems").get() .then((querySnapshot) => { querySnapshot.forEach((doc)
+        => { const item = doc.data(); const vegIcon = `<i class="fas fa-leaf" style="color: green; font-size: 12px;"> Veg </i>`; const nonVegIcon = `<i class="fas fa-drumstick-bite" style="color: red; font-size: 12px;"> Non-Veg </i>`; const card
+        = document.createElement("div"); card.className = "menu-item"; card.innerHTML = `
+        <div class="menu-item-image">
+            <img src="${item.imageUrl || '#'}" alt="${item.name}">
+        </div>
+        <div class="menu-item-content">
+            <div class="menu-item-title">
+                <h3>${item.name}</h3>
+                <span class="menu-item-price">₹ ${item.price}/-</span>
+            </div>
+            <p class="menu-item-desc">${item.description}</p>
+            <div class="menu-item-footer">
+                ${item.isVegetarian ? vegIcon : nonVegIcon}
+                <div class="menu-item-spicy">🌶️ ${item.spiceLevel || 'Regular'}</div>
+            </div>
+        </div>
+        `.trim(); menuContainer.appendChild(card); }); }) .catch((error) => { console.error("Error fetching menu:", error); });
+    </script> -->
+
+
+    <script type="module" src="Homepage.js"></script>
+
+</body>
